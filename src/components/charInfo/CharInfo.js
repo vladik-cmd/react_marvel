@@ -11,7 +11,7 @@ import useMarvelService from '../../services/MarvelService';
 const CharInfo = ({ charId }) => {
   const [char, setChar] = useState(null);
 
-  const { loading, error, getCharacter } = useMarvelService();
+  const { loading, error, getCharacter, clearError } = useMarvelService();
 
   useEffect(() => {
     updateChar();
@@ -21,6 +21,7 @@ const CharInfo = ({ charId }) => {
     if (!charId) {
       return;
     }
+    clearError();
     getCharacter(charId).then(onCharLoaded);
   };
 
