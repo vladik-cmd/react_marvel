@@ -38,17 +38,13 @@ const ComicsList = () => {
   function renderItems(arr) {
     const items = arr.map((item, i) => {
       return (
-          <li
-            className="comics__item"
-            key={i}
-            tabIndex={0}
-            >
-            <a href={item.url}>
-              <img src={item.image} alt={item.title} className="comics__item-img" />
-              <div className="comics__item-name">{item.title}</div>
-              <div className="comics__item-price">{item.price}</div>
-            </a>
-          </li>
+        <li className="comics__item" key={i} tabIndex={0}>
+          <a href={item.url}>
+            <img src={item.image} alt={item.title} className="comics__item-img" />
+            <div className="comics__item-name">{item.title}</div>
+            <div className="comics__item-price">{item.price}</div>
+          </a>
+        </li>
       );
     });
     return <ul className="comics__grid">{items}</ul>;
