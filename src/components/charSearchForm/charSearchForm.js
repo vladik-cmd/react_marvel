@@ -14,6 +14,7 @@ const CharSearchForm = () => {
 
   const onCharLoaded = (char) => {
     setChar(char);
+    console.log(char);
   };
 
   const updateChar = (name) => {
@@ -27,10 +28,10 @@ const CharSearchForm = () => {
       <ErrorMessage />
     </div>
   ) : null;
-  const results = !char ? null : char.name.length > 0 ? (
+  const results = !char ? null : char.length > 0 ? (
     <div className="char__search-wrapper">
-      <div className="char__search-success">There is! Visit {char.name} page?</div>
-      <Link to={`/characters/${char.id}`} className="button button__secondary">
+      <div className="char__search-success">There is! Visit {char[0].name} page?</div>
+      <Link to={`/characters/${char[0].id}`} className="button button__secondary">
         <div className="inner">To page</div>
       </Link>
     </div>
